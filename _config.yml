@@ -2,7 +2,7 @@
 title: "/* mhcerri's notes */"
 email: 
 description: > # this means to ignore newlines until "baseurl:"
-  Random notes about technical stuff that probably I would forget
+  Random notes about technical stuff that I would probably forget
   next week :-)
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://mhcerri.github.io" # the base hostname & protocol for your site

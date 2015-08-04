@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Defaults values
+# Default values
 EDITOR="${EDITOR:-vim}"
 EXT="${EXT:-md}"
 POST_DIR="${POST_DIR:-_posts}"
@@ -48,4 +48,3 @@ if [ -n "$EDITOR" ]; then
     esac
     $EDITOR $ARGS "$POST_FILE"
 fi
-  
