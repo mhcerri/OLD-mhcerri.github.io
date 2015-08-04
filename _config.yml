@@ -1,0 +1,13 @@
+# Site settings
+title: "/* mhcerri's notes */"
+email: 
+description: > # this means to ignore newlines until "baseurl:"
+  Random notes about technical stuff that probably I would forget
+  next week :-)
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://mhcerri.github.io" # the base hostname & protocol for your site
+twitter_username: 
+github_username:  mhcerri
+
+# Build settings
+markdown: redcarpet
