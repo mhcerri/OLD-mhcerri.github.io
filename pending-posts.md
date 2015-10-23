@@ -45,6 +45,10 @@ $ pacman -Qii | awk '/^MODIFIED/ {print $2}'
 Protecting SSH with fail2ban
 ----------------------------
 
+Ref. https://wiki.archlinux.org/index.php/Fail2ban
+
+ - Hardening
+
 /etc/fail2ban/action.d/autobot.conf
 /etc/fail2ban/action.d/ufw-all.conf
 /etc/fail2ban/jail.d/sshd-ufw.conf
