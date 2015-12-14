@@ -15,12 +15,14 @@ Install the necessary packages
 
 To start with Linux containers, install the following packages:
 
-    # On ArchLinux
-    pacman -S lxc arch-install-scripts
-    lxc-checkconfig
+```sh
+# On ArchLinux
+pacman -S lxc arch-install-scripts
+lxc-checkconfig
 
-    # On Fedora
-    dnf install lxc lxc-extra lxc-templates
+# On Fedora
+dnf install lxc lxc-extra lxc-templates
+```
 
 Configure the network
 =====================
@@ -30,12 +32,14 @@ device connected to a bridge.
 
 Add the following configuration to the file `/etc/lxc/defaults.conf`:
 
-    #
-    # Check `man lxc.container.conf` for more options.
-    #
-    lxc.network.type = veth
-    lxc.network.link = lxcbr0
-    lxc.network.flags = up
+```sh
+#
+# Check `man lxc.container.conf` for more options.
+#
+lxc.network.type = veth
+lxc.network.link = lxcbr0
+lxc.network.flags = up
+```
 
 Every container created will inherit the configs from `defaults.conf`. In the
 config above, `lxcbr0` is the name of the bridge that the virtual ethernet
@@ -45,36 +49,42 @@ The next step is to create the bridge `lxcbr0`.
 
 On Archlinux, create the file `/etc/netctl/lxcbr0`:
 
-    #
-    # Check `man netctl.profile` for more options.
-    #
-    Description="LXC bridge"
-    Interface=lxcbr0
-    Connection=bridge
-    IP=static
-    Address=192.168.100.1/24
+```sh
+#
+# Check `man netctl.profile` for more options.
+#
+Description="LXC bridge"
+Interface=lxcbr0
+Connection=bridge
+IP=static
+Address=192.168.100.1/24
+```
 
 And then:
 
-    netctl enable lxcbr0
-    netctl start lxcbr0
+```sh
+netctl enable lxcbr0
+netctl start lxcbr0
+```
 
 On Fedora (or any RHEL based ditro), create the file
 `/etc/sysconfig/network-scripts/ifcfg-lxcbr0`:
 
-    VICE=lxcbr0
-    STP=yes
-    DELAY=2
-    BRIDGING_OPTS=priority=32768
-    TYPE=Bridge
-    BOOTPROTO=none
-    IPADDR=192.168.10.1
-    PREFIX=24
-    DEFROUTE=yes
-    IPV4_FAILURE_FATAL=no
-    IPV6INIT=no
-    NAME=virbr0
-    ONBOOT=no
+```sh
+VICE=lxcbr0
+STP=yes
+DELAY=2
+BRIDGING_OPTS=priority=32768
+TYPE=Bridge
+BOOTPROTO=none
+IPADDR=192.168.10.1
+PREFIX=24
+DEFROUTE=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+NAME=virbr0
+ONBOOT=no
+```
 
 And then restart the network service.
 
@@ -90,16 +100,20 @@ Creating containers
 The simplest way to create containers is from templates. The templates
 available are located at `/usr/share/lxc/templates/`:
 
-    $ ls /usr/share/lxc/templates/
-    lxc-alpine     lxc-cirros    lxc-openmandriva  lxc-ubuntu
-    lxc-altlinux   lxc-debian    lxc-opensuse      lxc-ubuntu-cloud
-    lxc-archlinux  lxc-download  lxc-oracle
-    lxc-busybox    lxc-fedora    lxc-plamo
-    lxc-centos     lxc-gentoo    lxc-sshd
+```console
+$ ls /usr/share/lxc/templates/
+lxc-alpine     lxc-cirros    lxc-openmandriva  lxc-ubuntu
+lxc-altlinux   lxc-debian    lxc-opensuse      lxc-ubuntu-cloud
+lxc-archlinux  lxc-download  lxc-oracle
+lxc-busybox    lxc-fedora    lxc-plamo
+lxc-centos     lxc-gentoo    lxc-sshd
+```
 
 To create a container from a template run the command bellow as root:
 
-    lxc-create -t centos -n container-name
+```sh
+lxc-create -t centos -n container-name
+```
 
 Each template might require additional software in order to prepare the root
 file system. For example, for CentOS it's necessary to have `yum` available in
@@ -111,27 +125,29 @@ the most common instruction is how to change the root password.
 The `-n` indicates the name of the container to be created. Most of the LXC
 commands, accepts (or requires) a container as target.
 
-    # List all containers
-    lxc-ls
+```sh
+# List all containers
+lxc-ls
 
-    # List all containers with details
-    lxc-ls -f
+# List all containers with details
+lxc-ls -f
 
-    # Destroy a container
-    lxc-destroy -n container-name
+# Destroy a container
+lxc-destroy -n container-name
 
-    # Get container's details
-    lxc-info -n container-name
+# Get container's details
+lxc-info -n container-name
 
-    # Start/stop a container
-    lxc-start -n container-name
-    lxc-stop -n container-name
+# Start/stop a container
+lxc-start -n container-name
+lxc-stop -n container-name
 
-    # Attach to its console
-    lxc-console -n container-name
+# Attach to its console
+lxc-console -n container-name
 
-    # Clone a container (use <Ctrl-a q> to exit)
-    lxc-clone container-name new-container-name
+# Clone a container (use <Ctrl-a q> to exit)
+lxc-clone container-name new-container-name
+```
 
 Container structure
 ===================

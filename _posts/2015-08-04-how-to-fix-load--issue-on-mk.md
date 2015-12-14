@@ -10,7 +10,7 @@ _Note: I'm currently using a Raspberry Pi 2 and Arch Linux ARM_
 
 The load of my MK802 running Fedora 20 was constantly above 1.0. Checking the state of the processes I found:
 
-```sh
+```console
 $ ps -eo pid,state,cmd | awk '$2 != "S" && $2 != "R"'
    34 D [usb-storage]
 ```
@@ -41,7 +41,7 @@ usb_detect_type = 0
 
 Generate the new binary `script.bin`
 
-```
+```sh
 /opt/sunxi-tools/fex2bin ./script.fex ./script.bin
 ```
 

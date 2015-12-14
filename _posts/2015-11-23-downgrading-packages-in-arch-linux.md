@@ -12,12 +12,16 @@ and need to be downgraded.
 There are several ways to that, but the easiest is installing from
 the package cache. `cd` to the cache dir:
 
-    cd /var/cache/pacman/pkg/
+```sh
+cd /var/cache/pacman/pkg/
+```
 
 Find the version of the package that you want to downgrade to and
 install it using pacman:
 
-    pacman -U <file_name_of_the_package>
+```sh
+pacman -U <file_name_of_the_package>
+```
 
 If the cache was cleaned, you can download a snapshot or rebuild the
 package following the steps decribed in the

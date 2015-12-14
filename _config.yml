@@ -11,3 +11,4 @@ github_username:  mhcerri
 
 # Build settings
 markdown: redcarpet
+highlighter: pygments

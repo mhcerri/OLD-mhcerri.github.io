@@ -20,7 +20,7 @@ cd tmux
 libevent
 ----------
 
-```
+```sh
 curl -O -L 'https://sourceforge.net/projects/levent/files/libevent/libevent-2.0/libevent-2.0.22-stable.tar.gz'
 tar xf libevent-2.0.22-stable.tar.gz
 cd libevent-2.0.22-stable/
@@ -33,7 +33,7 @@ cd ..
 ncurses
 -------
 
-```
+```sh
 curl -O -L 'ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.9.tar.gz'
 tar xf ncurses-5.9.tar.gz
 ```
@@ -72,7 +72,7 @@ Apply the following patch or edit the file `./ncurses-5.9.orig/ncurses/base/MKli
 
 Proceed with installation:
 
-```
+```sh
 cd ncurses-5.9/
 ./configure --prefix=/tmp/local --with-default-terminfo-dir=/usr/share/terminfo  --with-terminfo-dirs="/etc/terminfo:/lib/terminfo:/usr/share/terminfo"
 make -j 4
@@ -83,7 +83,7 @@ cd ..
 tmux
 ----
 
-```
+```sh
 git clone 'https://github.com/tmux/tmux.git'
 cd tmux
 git checkout 1.9a

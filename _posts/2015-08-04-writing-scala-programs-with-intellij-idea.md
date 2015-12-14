@@ -12,7 +12,7 @@ tags:
 
 Download the community version from [JetBrains web site][idea] or install it from the distro repository:
 
-```sh
+```console
 # pacman -S intellij-idea-community-edition
 ```
 

@@ -12,7 +12,7 @@ Install `tigervnc`.
 
 Generate a password.
 
-```sh
+```console
 $ vncpasswd ~/.vncpasswd
 Password:
 Verify:
@@ -21,7 +21,7 @@ Would you like to enter a view-only password (y/n)? n
 
 Run `x0vncserver`.
 
-```sh
+```console
 $ x0vncserver -passwordfile ~/.vncpasswd
 ```
 

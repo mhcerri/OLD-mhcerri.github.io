@@ -20,13 +20,13 @@ For the GitHub Page part, every necessary step is simply described in the [GitHu
 
 - Clone it to your local machine.
 
-	```sh
+	```console
 	$ git clone https://github.com/username/username.github.io
 	```
 
 - And push your content;
 
-    ```sh
+    ```console
     $ cd username.github.io
     $ echo "Hello, World!" > index.html
     $ git add --all
@@ -43,19 +43,19 @@ There's no need to install Jekyll locally but you will need it if you want to pr
 
 The recommended way to install Jekyll is via `gem` that is included in the `ruby` package in Arch Linux.
 
-```sh
+```console
 # pacman -S ruby
 ```
 
 You also will need to include your local gem installation directory to your PATH.
 
-```sh
+```console
 $ export PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 ```
 
 And then install Jekyll and GitHub pages package with its supported plugins.
 
-```sh
+```console
 $ gem install jekyll
 $ gem install github-pages
 ```
@@ -65,7 +65,7 @@ Bootstrap your blog
 
 To create a new Jekyll blog use the `new` command.
 
-```sh
+```console
 $ cd ./username.github.io/
 $ jekyll new .
 ```
@@ -76,19 +76,19 @@ Take a look at the example post in `_posts` and remove it if you don't want to k
 
 To preview your blog use the `serve` command and then open the indicated URL in your browser.
 
-```sh
+```console
 $ jekyll serve
 ```
 
 Add a `.gitignore` file to exclude the generated content.
 
-```sh
+```console
 $ echo _site >> .gitignore
 ```
 
 Add push your blog to your GitHup repository.
 
-```sh
+```console
 $ git add --all
 $ git commit -m 'Add Jekyll basic blog'
 $ git push origin master
