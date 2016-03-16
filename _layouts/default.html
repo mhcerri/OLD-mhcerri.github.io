@@ -16,7 +16,7 @@
         <nav class="site-nav">
           {% assign groups = (site.pages | sort:'order','last' | group_by:'title') %}
           {% for group in groups %}
-            {% assign entry = group.items | first %}
+            {% assign entry = group.items | sort: 'url' | first %}
             {% assign urls = group.items | map:'url' %}
             {% if urls contains page.url %}
               {% assign style = 'text-decoration: underline;' %}
