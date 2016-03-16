@@ -37,4 +37,3 @@ That is a list of some topics that I want to cover:
 - Protecting SSH with fail2ban
 
     https://wiki.archlinux.org/index.php/Fail2ban
-

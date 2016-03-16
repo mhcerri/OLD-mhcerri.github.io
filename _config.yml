@@ -1,14 +1,39 @@
-# Site settings
-title: "mhcerri's tech notes"
-email: 
-description: > # this means to ignore newlines until "baseurl:"
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:              pretty
+#relative_permalinks:    true
+
+# Setup
+title:                  "mhcerri's tech notes"
+tagline: > # this means to ignore newlines until "url:"
   Random notes about technical stuff that I would probably forget
   next week :-)
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://mhcerri.github.io" # the base hostname & protocol for your site
-twitter_username: 
-github_username:  mhcerri
+url:                    http://mhcerri.github.io
+baseurl:                "" # subpath, e.g. /blog/
+paginate:               10
 
 # Build settings
-markdown: redcarpet
-highlighter: pygments
+markdown:               redcarpet
+highlighter:            pygments
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:             _sass
+  style:                :compressed
+
+# About/contact
+author:
+  name:                 Marcelo Cerri
+  url:                  
+  email:                
+
+# Custom vars
+version:                2.0.0
+github:                 
+  repo:                 https://github.com/mhcerri/mhcerri
+
+# Deps
+gems:                   [github-pages]

@@ -2,8 +2,9 @@
 layout: page
 title: About
 permalink: /about/
+order: 2
 ---
 
-*Marcelo Cerri*
+Marcelo Cerri
 
 {{ site.description }}
