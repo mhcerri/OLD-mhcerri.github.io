@@ -21,7 +21,7 @@ libevent
 ----------
 
 ```sh
-curl -O -L 'https://sourceforge.net/projects/levent/files/libevent/libevent-2.0/libevent-2.0.22-stable.tar.gz'
+curl -O -L 'https://github.com/libevent/libevent/releases/download/release-2.0.22-stable/libevent-2.0.22-stable.tar.gz'
 tar xf libevent-2.0.22-stable.tar.gz
 cd libevent-2.0.22-stable/
 ./configure --prefix=/tmp/local --disable-shared
@@ -70,6 +70,10 @@ Apply the following patch or edit the file `./ncurses-5.9.orig/ncurses/base/MKli
  ED2=sed2_${PID}.sed
 ```
 
+> Copy the patch and paste it as input to the command:
+>
+>   patch -p1
+
 Proceed with installation:
 
 ```sh
@@ -87,6 +91,7 @@ tmux
 git clone 'https://github.com/tmux/tmux.git'
 cd tmux
 git checkout 1.9a
+./autogen.sh
 ./configure --enable-static CFLAGS="-I/tmp/local/include -I/tmp/local/include/ncurses" LDFLAGS="-L/tmp/local/lib -L/tmp/local/include -L/tmp/local/include/ncurses" LIBEVENT_CFLAGS="-I/tmp/local/include" LIBEVENT_LIBS="-L/tmp/local/lib -levent"
 make -j4
 
