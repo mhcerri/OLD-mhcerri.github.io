@@ -13,9 +13,9 @@ url:                    http://mhcerri.github.io
 baseurl:                "" # subpath, e.g. /blog/
 paginate:               10
 
-# Build settings
+## Build settings
+highlighter:            rouge
 markdown:               redcarpet
-highlighter:            pygments
 
 # Assets
 #
@@ -36,4 +36,6 @@ github:
   repo:                 https://github.com/mhcerri/mhcerri
 
 # Deps
-gems:                   [github-pages]
+gems:
+    - github-pages
+    - jekyll-paginate
